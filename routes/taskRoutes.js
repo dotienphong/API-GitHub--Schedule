@@ -37,8 +37,18 @@ app.delete("/tasks/:id", async (req, res) => {
 
 //UPDATE (sửa)
 app.patch("/tasks/:id", async (req, res) => {
+    console.log(req.params.id);
     try {
-        const task = await taskModel.findByIdAndUpdate({ _id: req.params.id }, { price: req.body.data.price })
+        const task = await taskModel.findByIdAndUpdate(
+            req.params.id,
+            {
+                taskName: req.body.data.taskName,
+                taskDetail: req.body.data.taskDetail,
+                timeStart: req.body.data.timeStart,
+                timeEnd: req.body.data.timeEnd,
+                choiceDate: req.body.data.choiceDate
+            },
+        )
         res.status(200).send(task)
     } catch (err) {
         res.status(500).send(err)

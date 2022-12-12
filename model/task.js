@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
 const taskSchema = new mongoose.Schema({
-    id: {
-        type: Number
-    },
     taskName: {
         type: String
     },
