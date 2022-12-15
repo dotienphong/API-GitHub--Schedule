@@ -46,7 +46,8 @@ app.patch("/tasks/:id", async (req, res) => {
                 taskDetail: req.body.data.taskDetail,
                 timeStart: req.body.data.timeStart,
                 timeEnd: req.body.data.timeEnd,
-                choiceDate: req.body.data.choiceDate
+                choiceDate: req.body.data.choiceDate,
+                timeUpdate: req.body.data.timeUpdate
             },
         )
         res.status(200).send(task)

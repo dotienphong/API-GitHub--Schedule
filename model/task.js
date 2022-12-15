@@ -12,9 +12,12 @@ const taskSchema = new mongoose.Schema({
     timeEnd: {
         type: String
     },
+    timeUpdate: {
+        type: String
+    },
     choiceDate: {
         type: String
-    }
+    },
 })
 const taskModel = mongoose.model('tasks', taskSchema)
 module.exports = taskModel
